@@ -1,0 +1,12 @@
+Generate and manage 3rd-party app password
+(https://help.yahoo.com/kb/SLN15241.html)
+
+To get a Yahoo app password, you can: 
+
+1. Sign in to your Yahoo Account Security page. (https://login.yahoo.com/myaccount/security/)
+2. Click Generate app password or Generate and manage app passwords.
+3. Click Get Started.
+4. Enter your app's name in the text field.
+5. Click Generate password.
+6. Use the one-time password to log in to your 3rd party app .
+7. Click Done.
