@@ -114,6 +114,9 @@ def search_string(uid_max, criteria):
     return '(%s)' % ' '.join(chain(*c))
 
 def submitted_applications(file_path, username, password, uid_max, criteria):
+
+    print(f"\nFetching submitted applications")
+    
     try:
         imap_server = imaplib.IMAP4_SSL("imap.mail.yahoo.com", 993)
         imap_server.login(username, password)
@@ -228,8 +231,14 @@ def submitted_applications(file_path, username, password, uid_max, criteria):
     except Exception as e:
         print(f"Unexpected error: {e}")
         sys.exit(1)
+    
+    print("--------------------------------------------------------------------------------------")
+    print(f"Submitted applications added to the list")
         
 def viewed_applications(file_path, username, password, uid_max, criteria):
+
+    print(f"\nFetching viewed applications")
+    
     try:
         imap_server = imaplib.IMAP4_SSL("imap.mail.yahoo.com", 993)
         imap_server.login(username, password)
@@ -330,7 +339,7 @@ def viewed_applications(file_path, username, password, uid_max, criteria):
                         print(f"Company: {company}")
                         print(f"Application date: {application_date_search}")
                             
-            imap_server.logout()
+        imap_server.logout()
             
     except PermissionError as e:
         print(f"Error: Unable to access '{file_path}' due to permission issues.")
@@ -345,7 +354,13 @@ def viewed_applications(file_path, username, password, uid_max, criteria):
         raise Exception("Error while connecting to the Yahoo email server.") from e
         sys.exit(1)
         
+    print("--------------------------------------------------------------------------------------")
+    print(f"Viewed applications updated")
+        
 def closed_applications(file_path, username, password, uid_max, criteria):
+
+    print(f"\nFetching viewed applications")
+    
     try:
         imap_server = imaplib.IMAP4_SSL("imap.mail.yahoo.com", 993)
         imap_server.login(username, password)
@@ -481,6 +496,9 @@ def closed_applications(file_path, username, password, uid_max, criteria):
     except Exception as e:
         raise Exception("Error while connecting to the Yahoo email server.") from e
         sys.exit(1)
+        
+    print("--------------------------------------------------------------------------------------")
+    print(f"Closed applications updated")
 
 if __name__ == "__main__":
     main()
